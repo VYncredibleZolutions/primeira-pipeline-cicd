@@ -41,6 +41,6 @@ jobs:
         with:
           namespace: 'myapp'
           manifests: |
-              k8s/deplouyment.yml
+              k8s/deployment.yml
           images: |
               vyzolutions/teste-pipe:v${{ github.run_number }}
