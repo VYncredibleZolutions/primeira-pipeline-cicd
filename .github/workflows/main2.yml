@@ -16,4 +16,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
+      - name: Build da Imagem Docker
+        uses: docker/build-push-action@v5.3.0
+        with:
+          context: ./src
+          file: ./src/Dockerfile
+          push: true
+          tags: |
+            vyzolutions/teste-pipe:v${{ github.run_number }}
+            vyzolutions/teste-pipe:latest
